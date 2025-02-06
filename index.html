@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .img {
+            /* display: none; */
+            position: absolute;
+            top: 89%;
+            left: 94%;
+            /* top: 0%;
+            left: 0%; */
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="img">
+        <img src="img/1.png" width="100" height="100" alt="">
+    </div>
+
+
+
+    
+
+    <script>
+
+    function timer() {
+        let pointTop = Math.floor(Math.random() * (89 - 0) + 0);
+        let pointLeft = Math.floor(Math.random() * (94 - 0) + 0);
+        console.log("PointTop " + pointTop + "<br>");
+        console.log("PointLeft " + pointLeft + "<br>");
+        let test1 = document.querySelector(".img");
+        test1.style.top = (pointTop + "%");
+        let test2 = document.querySelector(".img");
+        test1.style.left = (pointLeft + "%");
+    }
+        timer();
+    let timerId = setInterval(timer, 1000);
+    
+
+
+
+    
+    
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
