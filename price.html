@@ -7,7 +7,11 @@
     <title>MyCrossoffKi.ru</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-
+    <style>
+        h1 {
+            margin: 1% 0%;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,7 +19,6 @@
         <div class="container">
             <div class="d-flex">
                 <a href="index.html"><b>My<s>Crossoff</s>Ki</b></a>
-
                 <a href="#nav" class="menu-btn">&#9776;</a>
                 <div id="nav">
                     <a href="#" class="menu-btn">&times;</a>
@@ -32,17 +35,58 @@
     </header>
     <main>
         <div class="container">
-            <div class="title">
-                <h1>ВАШИ ЕЖЕДНЕВНЫЕ ПОТРЕБНОСТИ</h1>
-                <h2>ИМЕЮТ ЗНАЧЕНИЕ</h2>
-            </div>
-            <img src="img/background7-cross.jpeg" alt="">
-            <p>Наши товары разрабатываются и производятся с приоритетным вниманием к деталям, которые особенно
-                ценны для наших покупателей. Мы предлагаем инновационные решения для ежедневного комфорта и удобства.
-            </p>
+            <h1>ПРАЙС</h1>
 
+            <div class="d-flex-price">
+                <div class="item">
+                    <div class="head">Кроcсовки</div>
+                    <div class="foot">
+                        <p>Стиль</p><br>
+                        <p>Дизайн</p><br>
+                        <p>Удобство</p><br>
+                        <p>Комфорт</p><br>
+                        <input type="submit" value="Заказать">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="head">Майки</div>
+                    <div class="foot">
+                        <p>Надежность</p><br>
+                        <p>Термоустойчивость</p><br>
+                        <p>Ветро-влага защита</p><br>
+                        <p>Экологичность</p><br>
+                        <input type="submit" value="Заказать">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="head">Soft</div>
+                    <div class="foot">
+                        <p>Криптокошельки</p><br>
+                        <p>Лицензии</p><br>
+                        <p>Взломы</p><br>
+                        <p>Win10</p><br>
+                        <input type="submit" value="Заказать">
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="head">Прочие услуги</div>
+                    <div class="foot">
+                        <p>Маркетинг</p><br>
+                        <p>Выживание в лесу</p><br>
+                        <p>Тактика</p><br>
+                        <p>Матчасть</p><br>
+                        <input type="submit" value="Заказать">
+                    </div>
+                </div>
+
+            </div>
+            <br><br><br><br><br>
+            <p class="goText"></p>
+            <p class="goText">При поддержке фонда веб-приложений среднего качества</p>
+            
         </div>
     </main>
+
     <footer>
         <!-- отцентнрировать -->
         <div class="container">
@@ -72,6 +116,21 @@
         <!-- <div>2024 (c) все права защищены</div> -->
 
     </footer>
+
+<script>
+ const text_go_sel_text = "Выбор ведущих специалистов";
+        const text_go_sel = document.querySelector(".goText");
+        let i = 0;
+        setTimeout(function go() {
+            text_go_sel.innerHTML += text_go_sel_text[i];
+            if ((i) < text_go_sel_text.length - 1) {
+                setTimeout(go, 100);
+            }
+            i++;
+        }, 100);
+    
+</script>
+    
 </body>
 
 </html>
