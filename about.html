@@ -7,6 +7,8 @@
     <title>MyCrossoffKi.ru</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_counter.css">
+
 </head>
 
 <body>
@@ -30,6 +32,30 @@
 
     </header>
     <main>
+
+        <div id="time"></div>
+        <div class="counter">
+            <p>Осталось до нового уровня</p>
+            <div class="timer">
+                <div>
+                    <p id="day"></p>
+                    <p>Дней</p>
+                </div>
+                <div>
+                    <p id="hour"></p>
+                    <p>Часов</p>
+                </div>
+                <div>
+                    <p id="minut"></p>
+                    <p>Минут</p>
+                </div>
+                <div>
+                    <p id="second"></p>
+                    <p>Секунд</p>
+                </div>
+            </div>
+        </div>
+
         <div class="container">
             <h1><b>My<s>Crossoff</s>Ki</b></h1><br>
             <p>Преданность людям, преданность будущему. MyCrossoffKi давно позиционирует это основное обязательство как
@@ -109,5 +135,30 @@
 
     </footer>
 </body>
+
+<script>
+
+    function timer() {
+        let now = new Date();
+        let new_year = new Date("2026-01-01");
+        let m_second = new_year - now;
+        let second = Math.floor(m_second / (1000) % 60);
+        let minut = Math.floor(m_second / (1000 * 60) % 60);
+        let hour = Math.floor(m_second / (60 * 60 * 1000) % 24);
+        let day = Math.floor(m_second / (60 * 60 * 24 * 1000));
+        let secondN = document.querySelector("#second");
+        let minutN = document.querySelector("#minut");
+        let hourN = document.querySelector("#hour");
+        let dayN = document.querySelector("#day");
+
+        secondN.innerHTML = second;
+        minutN.innerHTML = minut;
+        hourN.innerHTML = hour;
+        dayN.innerHTML = day;
+    }
+    timer();
+    let timerId = setInterval(timer, 1000);
+
+</script>
 
 </html>

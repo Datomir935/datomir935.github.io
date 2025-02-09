@@ -1,0 +1,22 @@
+#login_form {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.auth {
+    position: relative;
+}
+
+#login_form.show {
+    display: block;
+}
+
+.auth-trigger {
+    cursor: pointer;
+}

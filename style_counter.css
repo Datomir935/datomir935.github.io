@@ -1,0 +1,34 @@
+        .counter {
+            /* display: flex; */
+            border: solid 1px black;
+            max-width: 30%;
+            margin: auto;
+        }
+
+        .timer {
+            display: flex;
+            margin: auto;   
+                
+        }
+
+        .timer div {
+            text-align: center;
+            margin: auto;    
+            width: 50%;
+        }
+
+        .counter p {
+            display: block;
+            /* background-color: yellow;    */
+            text-align: center;
+            /* font-size: large; */
+        }
+
+        
+        #hour
+        #day
+        #second
+        #minut  {
+            font-size: 32px;
+        }
+
