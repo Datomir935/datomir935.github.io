@@ -32,3 +32,17 @@
             font-size: 32px;
         }
 
+        @media (max-width: 767px) {
+
+            .counter {
+                /* display: flex; */
+                border: solid 1px black;
+                max-width: 80%;
+                margin: auto;
+            }
+
+
+
+
+
+            }
