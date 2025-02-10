@@ -121,7 +121,7 @@
                 <img src="img/cross_2.jpg" alt="">
                 <div>
 
-                    <hr>
+                    
                     <ul>
                         <li>&#10148; Сегодня знания, технологии и связи с клиентами,
                             культивируемые этими предприятиями, являются бесценными активами. 
@@ -136,6 +136,31 @@
                 </div>
             </div>
         </div>
+
+    <script id="canvas"> //огонь на канвасе
+
+const c = document.body.appendChild(Object.assign(document.createElement("canvas"), { width: 300, height: 300, style: "position:absolute; bottom:-200px; " })),
+      x = c.getContext("2d"), p = [];
+
+(function a() {
+    x.clearRect(0, 0, c.width, c.height);
+    while (p.length < 50) p.push({ x: 150 + (Math.random() - 0.5) * 50, y: 280, s: Math.random() * 4 + 1, dx: (Math.random() - 0.5) * 1.5, dy: Math.random() * -2 - 0.5, o: Math.random() * 0.5 + 0.5, c: `rgb(${Math.random() * 255}, ${Math.random() * 100}, 0)` });
+    p.forEach((e, i) => {
+        Object.assign(e, { x: e.x + e.dx, y: e.y + e.dy, o: e.o - 0.02 });
+        if (e.o <= 0) p.splice(i, 1);
+        x.globalAlpha = e.o;
+        x.fillStyle = e.c;
+        x.beginPath();
+        x.arc(e.x, e.y, e.s, 0, 7);
+        x.fill();
+    });
+    requestAnimationFrame(a);
+})();
+
+
+
+    </script>
+
     </main>
     <footer>
         <!-- отцентнрировать -->
@@ -214,6 +239,11 @@
 
 </script>
 
+<script>
+
+
+
+</script>
 
 
 </html>
