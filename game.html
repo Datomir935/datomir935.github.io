@@ -7,6 +7,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_login.css">
+
     <style>
         .img {
             /* display: none; */
@@ -36,6 +38,29 @@
                             <li><a class="current" href="contacts.html">контакты</a></li>
                             <li><a сlass="current" href="game.html">Игра</a></li>
                             <li><a сlass="current" href="about.html">о компании</a></li>
+                            <div class="login-name"></div>
+                        <div class = "auth">
+                            <span class="auth-trigger">Войти в IT</span>
+                            <form action="" id="login_form">
+                            <div class="form_row single_row">
+                                <!-- <label for="login">Your login:</label> -->
+                                <input type="text" name="login" id="login" pattern="\D{3,20}"  required placeholder="Your login">  
+                                <!-- поле обязательно к заполнению required -->
+                            </div>
+                            <div class="form_row single_row">
+                                <!-- <label for="pass">Your password:</label> -->
+                                <input type="password" name="pass" id="pass" pattern="\d{5,20}" required   placeholder="Your password">
+                            </div>
+                            <div class="chek_row">
+                                
+                                <label for="remember">Remember me</label>
+                                <input type="checkbox"  name="remember" id="remember" >
+                                
+                            </div>
+                            <div class="form_row">
+                                <button type="submit">Sign In</button>
+                            </div>
+                        </div>
                         </ul>
                     </nav>
                 </div>
@@ -113,5 +138,30 @@
     </footer>
 
 </body>
+
+<script>
+    let trigger = document.querySelector(".auth-trigger");
+    let myForm = document.forms[0];
+    let loginName = document.querySelector(".login-name");
+    let auth = document.querySelector(".auth");
+    trigger.addEventListener("click", function () {
+        myForm.classList.toggle('show');
+    })
+    myForm.addEventListener('submit', function(e){
+            e.preventDefault();
+        let login = myForm.querySelector("#login").value;
+        let rem = document.querySelector("#remember");
+        loginName.innerHTML = "hi, " + login;
+        auth.style.display = "none";
+        localStorage.setItem("userName", login);  
+    })
+    let localName = localStorage.getItem("userName");
+    document.addEventListener("DOMContentLoaded", function (){
+        if (localName) {
+            loginName.innerHTML = "Теперь ты в IT, " + localName;
+            auth.style.display = "none";
+        }
+    })
+</script>
 
 </html>
