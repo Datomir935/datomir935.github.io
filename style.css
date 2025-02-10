@@ -250,7 +250,7 @@ form input {
         padding: 20px;
         text-align: center;
         position: fixed;
-        height: 23%;
+        height: 40%;
         top: 0;
         width: 100%;
         background: rgb(255, 208, 0);  
@@ -278,5 +278,8 @@ form input {
     iframe {
         max-width: 90%;
     }
-}
 
+ul.d-flex {
+    display: contents;
+}
+}
